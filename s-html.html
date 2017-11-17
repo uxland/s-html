@@ -19,7 +19,7 @@ The complete set of contributors may be found at https://github.com/StartPolymer
 
 </style>
 
-<content select="span"></content>
+<slot></slot>
 
 </template>
 <script>
@@ -47,7 +47,7 @@ Polymer({
   },
 
   _htmlChanged: function(html) {
-    var child = Polymer.dom(this).queryDistributedElements('span')[0];
+    var child = Polymer.dom(this).children[0];
 
     if (this.unescape) {
       html = this._unescapeHtml(html);
