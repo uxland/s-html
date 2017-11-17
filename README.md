@@ -11,7 +11,7 @@ Localize text with HTML elements using [app-localize-behavior](https://github.co
 locales.json
 ```json
 {
-"text": "<a href=\"/settings\">Settings</a>"
+"text": "<span>Settings</a>"
 }
 ```
 
@@ -22,12 +22,12 @@ HTML
 
 ### Example 2
 
-Using `span` element for content styled with CSS.
+Using element content styled with CSS.
 
 locales.json
 ```json
 {
-"text": "<a class=\"red\" href=\"/settings\">Settings</a>"
+"text": "<span class=\"red\">Settings</span>"
 }
 ```
 
@@ -40,10 +40,33 @@ CSS
 
 HTML
 ```html
-<s-html html="[[localize('text')]]"><span></span></s-html>
+<s-html html="[[localize('text')]]"></s-html>
 ```
 
 ### Example 3
+
+Using element content styled with CSS within an element.
+
+locales.json
+```json
+{
+"text": "<span class=\"red\">Settings</span>"
+}
+```
+
+CSS
+```css
+.red {
+  color: red;
+}
+```
+
+HTML
+```html
+<s-html html="[[localize('text')]]"><custom-element></custom-element></s-html>
+```
+
+### Example 4
 
 Unescape escaped HTML elements.
 
@@ -61,8 +84,8 @@ HTML
 
 ## Installation
 
-`bower i s-html -S`
+`bower i uxland/s-html -S`
 
 ## License
 
-MIT: [StartPolymer/license](https://github.com/StartPolymer/license)
+Apache 2.0
