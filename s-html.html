@@ -30,7 +30,7 @@ Polymer({
 
   properties: {
     /**
-     * HTML template string.
+     * Text with HTML elements.
      */
     html: {
       type: String,
@@ -56,7 +56,8 @@ Polymer({
     if (child) {
       Polymer.dom(child).innerHTML = html;
     } else {
-      Polymer.dom(this.root).innerHTML = html;
+
+      Polymer.dom(this).innerHTML = html;
     }
   },
 
